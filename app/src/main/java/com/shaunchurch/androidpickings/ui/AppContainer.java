@@ -7,6 +7,7 @@ import static butterknife.ButterKnife.findById;
 
 /**
  * An indirection which allows controlling the root container used for each activity.
+ * From U2020-mvp project.
  */
 public interface AppContainer {
     /**
