@@ -28,6 +28,9 @@ public abstract class AppActivity extends Activity {
 
         App app = App.get(this);
         onCreateComponent(app.component());
+        if(appContainer == null ){
+            throw new IllegalStateException("No injection happened. Add component.inject(this) in onCreateComponent.");
+        }
 
     }
 

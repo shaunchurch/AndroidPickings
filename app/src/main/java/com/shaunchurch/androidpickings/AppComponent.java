@@ -1,9 +1,12 @@
 package com.shaunchurch.androidpickings;
 
+import com.shaunchurch.androidpickings.data.DataModule;
+import com.shaunchurch.androidpickings.ui.UiModule;
+
 import dagger.Component;
 
 @ApplicationScope
-@Component(modules = { AppModule.class })
+@Component(modules = { AppModule.class, UiModule.class, DataModule.class })
 public interface AppComponent extends AppGraph {
     /**
      * An initializer that creates the graph from an application.

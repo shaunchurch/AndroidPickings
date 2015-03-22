@@ -11,6 +11,8 @@ import com.shaunchurch.androidpickings.R;
 import com.shaunchurch.androidpickings.ui.base.AppActivity;
 import com.shaunchurch.androidpickings.ui.base.HasComponent;
 
+import timber.log.Timber;
+
 public class DashboardActivity extends AppActivity implements HasComponent<DashboardComponent> {
 
     private DashboardComponent dashboardComponent;
@@ -20,6 +22,8 @@ public class DashboardActivity extends AppActivity implements HasComponent<Dashb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
     }
 
     @Override
@@ -28,6 +32,10 @@ public class DashboardActivity extends AppActivity implements HasComponent<Dashb
                 .appComponent(appComponent)
                 .dashboardModule(new DashboardModule())
                 .build();
+
+
+        Timber.i("Created component in Dashboard activity.");
+
     }
 
     @Override
@@ -38,7 +46,7 @@ public class DashboardActivity extends AppActivity implements HasComponent<Dashb
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.megnu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

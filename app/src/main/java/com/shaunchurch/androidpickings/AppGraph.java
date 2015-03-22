@@ -8,6 +8,6 @@ import com.squareup.picasso.Picasso;
  */
 public interface AppGraph {
     void inject(App app);
-//    AppContainer appContainer();
-//    Picasso picasso();
+    AppContainer appContainer();
+    Picasso picasso();
 }
