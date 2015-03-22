@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.shaunchurch.androidpickings.ui.WebImageView
+    <com.shaunchurch.androidpickings.ui.common.WebImageView
         android:id="@+id/webImageView"
         android:layout_width="200dp"
         android:layout_height="200dp" />
@@ -29,6 +29,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonHello" />
-
 
 </RelativeLayout>

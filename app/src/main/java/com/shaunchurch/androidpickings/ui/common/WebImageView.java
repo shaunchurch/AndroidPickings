@@ -1,4 +1,4 @@
-package com.shaunchurch.androidpickings.ui;
+package com.shaunchurch.androidpickings.ui.common;
 
 import android.content.Context;
 import android.util.AttributeSet;

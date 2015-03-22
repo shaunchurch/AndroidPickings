@@ -11,7 +11,7 @@ import android.widget.Button;
 import com.shaunchurch.androidpickings.AppComponent;
 import com.shaunchurch.androidpickings.R;
 import com.shaunchurch.androidpickings.example.Vehicle;
-import com.shaunchurch.androidpickings.ui.WebImageView;
+import com.shaunchurch.androidpickings.ui.common.WebImageView;
 import com.shaunchurch.androidpickings.ui.base.BaseActivity;
 import com.shaunchurch.androidpickings.ui.base.HasComponent;
 import com.shaunchurch.androidpickings.ui.hello.HelloActivity;
