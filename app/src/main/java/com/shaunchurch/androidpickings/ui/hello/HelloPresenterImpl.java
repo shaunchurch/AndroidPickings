@@ -8,10 +8,10 @@ import javax.inject.Inject;
 public class HelloPresenterImpl implements HelloPresenter {
 
     private final HelloView view;
-    private final MessageSupplier messageSupplier;
+    private final HelloSupplier messageSupplier;
 
     @Inject
-    public HelloPresenterImpl(HelloView view, MessageSupplier messageSupplier) {
+    public HelloPresenterImpl(HelloView view, HelloSupplier messageSupplier) {
         this.view = view;
         this.messageSupplier = messageSupplier;
     }

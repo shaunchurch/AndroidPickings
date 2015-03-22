@@ -19,7 +19,7 @@ public class HelloModule {
     }
 
     @Provides
-    MessageSupplier messageSupplier(MessageSupplierImpl impl) {
+    HelloSupplier messageSupplier(HelloSupplierImpl impl) {
         return impl;
     }
 
@@ -27,5 +27,9 @@ public class HelloModule {
     HelloPresenter helloPresenter(HelloPresenterImpl impl) {
         return impl;
     }
+
+    @Provides
+    HelloTimeService helloTimeService(HelloTimeServiceImpl impl) { return impl; }
+
 
 }
