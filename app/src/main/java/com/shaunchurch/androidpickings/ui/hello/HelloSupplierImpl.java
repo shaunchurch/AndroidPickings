@@ -17,6 +17,7 @@ public class HelloSupplierImpl implements HelloSupplier {
     @Override
     public String getMessage() {
         int hour = helloTimeService.currentHour();
-        return "Hello! It's around " + hour + "00 hours.";
+        int month = helloTimeService.currentMonth();
+        return "Hello! It's around " + hour + "00 hours, during month " + month + ".";
     }
 }

@@ -29,6 +29,15 @@ public class HelloActivity extends BaseActivity
     @InjectView(R.id.textMessage) TextView textMessage;
 
     @Override
+    protected void onCreateComponent(AppComponent appComponent) {
+        helloComponent = Dagger_HelloComponent.builder()
+                .appComponent(appComponent)
+                .helloModule(new HelloModule(this))
+                .build();
+        helloComponent.inject(this);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
@@ -41,15 +50,6 @@ public class HelloActivity extends BaseActivity
 
         // do whatever is needed to get a message
         presenter.requestMessage();
-    }
-
-    @Override
-    protected void onCreateComponent(AppComponent appComponent) {
-        helloComponent = Dagger_HelloComponent.builder()
-                .appComponent(appComponent)
-                .helloModule(new HelloModule(this))
-                .build();
-        helloComponent.inject(this);
     }
 
     /**

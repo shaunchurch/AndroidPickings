@@ -19,4 +19,10 @@ public class HelloTimeServiceImpl implements HelloTimeService {
         return new GregorianCalendar().get(Calendar.HOUR_OF_DAY);
     }
 
+    @Override
+    public int currentMonth() {
+        return new GregorianCalendar().get(Calendar.MONTH);
+    }
+
+
 }
