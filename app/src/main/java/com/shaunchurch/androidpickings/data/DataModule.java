@@ -60,7 +60,7 @@ public final class DataModule {
         OkHttpClient client = new OkHttpClient();
 
         // set up cache
-        File cacheDir = new File(app.getCacheDir(), "http");
+        File cacheDir = new File(app.getCacheDir(), app.getString(R.string.cache_dir));
         Cache cache = new Cache(cacheDir, DISK_CACHE_SIZE);
         client.setCache(cache);
 

@@ -5,4 +5,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_hello">HelloActivity</string>
+    <string name="cache_dir">http</string>
+    <string name="title_activity_planets">Planets</string>
 </resources>

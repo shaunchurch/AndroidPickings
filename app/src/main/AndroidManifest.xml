@@ -25,6 +25,9 @@
             android:name=".ui.hello.HelloActivity"
             android:label="@string/title_activity_hello" />
 
+        <activity android:name=".ui.planets.PlanetsActivity"
+            android:label="@string/title_activity_planets" />
+
     </application>
 
 </manifest>

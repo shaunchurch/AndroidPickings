@@ -15,6 +15,7 @@ import com.shaunchurch.androidpickings.ui.WebImageView;
 import com.shaunchurch.androidpickings.ui.base.BaseActivity;
 import com.shaunchurch.androidpickings.ui.base.HasComponent;
 import com.shaunchurch.androidpickings.ui.hello.HelloActivity;
+import com.shaunchurch.androidpickings.ui.planets.PlanetsActivity;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
@@ -27,11 +28,11 @@ public class DashboardActivity extends BaseActivity
 
     private DashboardComponent dashboardComponent;
 
-    @Inject
-    Picasso picasso;
+    @Inject Picasso picasso;
 
     @InjectView(R.id.webImageView) WebImageView webImageView;
     @InjectView(R.id.buttonHello) Button buttonHello;
+    @InjectView(R.id.buttonPlanets) Button buttonPlanets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +40,12 @@ public class DashboardActivity extends BaseActivity
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
+        // listen for clicks
         buttonHello.setOnClickListener(this);
+        buttonPlanets.setOnClickListener(this);
 
-        picasso.load("http://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg").into(webImageView);
+        picasso.load("http://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg")
+                .into(webImageView);
         Vehicle vehicle = dashboardComponent.provideVehicle();
         vehicle.increaseSpeed(100);
     }
@@ -73,6 +77,9 @@ public class DashboardActivity extends BaseActivity
         switch(v.getId()) {
             case R.id.buttonHello:
                 startActivity(new Intent(this, HelloActivity.class));
+                break;
+            case R.id.buttonPlanets:
+                startActivity(new Intent(this, PlanetsActivity.class));
                 break;
         }
     }

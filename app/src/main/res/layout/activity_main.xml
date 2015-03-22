@@ -20,6 +20,15 @@
         android:id="@+id/buttonHello"
         android:text="Hello"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/webImageView" />
+
+    <Button
+        android:id="@+id/buttonPlanets"
+        android:text="Planets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonHello" />
+
 
 </RelativeLayout>
