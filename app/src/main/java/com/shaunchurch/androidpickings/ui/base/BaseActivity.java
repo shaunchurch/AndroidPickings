@@ -15,7 +15,7 @@ import javax.inject.Inject;
 /**
  * Created by shaun on 21/03/15.
  */
-public abstract class AppActivity extends ActionBarActivity {
+public abstract class BaseActivity extends ActionBarActivity {
 
     @Inject
     AppContainer appContainer;

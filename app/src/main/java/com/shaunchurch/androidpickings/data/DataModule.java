@@ -50,6 +50,11 @@ public final class DataModule {
         return app.getSharedPreferences("android_pickings", MODE_PRIVATE);
     }
 
+    /**
+     * Set up okhttp client with cache directory
+     * @param app
+     * @return
+     */
     static OkHttpClient createOkHttpClient(Application app) {
         OkHttpClient client = new OkHttpClient();
 

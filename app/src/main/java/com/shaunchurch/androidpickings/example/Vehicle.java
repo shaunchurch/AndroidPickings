@@ -1,4 +1,4 @@
-package com.shaunchurch.androidpickings;
+package com.shaunchurch.androidpickings.example;
 
 import javax.inject.Inject;
 

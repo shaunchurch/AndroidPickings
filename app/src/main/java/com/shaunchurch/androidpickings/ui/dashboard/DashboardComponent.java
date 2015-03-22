@@ -1,7 +1,7 @@
 package com.shaunchurch.androidpickings.ui.dashboard;
 
 import com.shaunchurch.androidpickings.AppComponent;
-import com.shaunchurch.androidpickings.Vehicle;
+import com.shaunchurch.androidpickings.example.Vehicle;
 
 import dagger.Component;
 

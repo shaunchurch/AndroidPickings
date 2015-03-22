@@ -1,7 +1,4 @@
-package com.shaunchurch.androidpickings;
-
-import com.shaunchurch.androidpickings.Motor;
-import com.shaunchurch.androidpickings.Vehicle;
+package com.shaunchurch.androidpickings.example;
 
 import javax.inject.Singleton;
 
