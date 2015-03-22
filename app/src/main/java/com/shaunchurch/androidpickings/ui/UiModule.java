@@ -1,7 +1,6 @@
 package com.shaunchurch.androidpickings.ui;
 
 import com.shaunchurch.androidpickings.ApplicationScope;
-import com.squareup.picasso.Picasso;
 
 import dagger.Module;
 import dagger.Provides;

@@ -2,9 +2,6 @@ package com.shaunchurch.androidpickings.ui.hello;
 
 import javax.inject.Inject;
 
-/**
- * Created by shaun on 22/03/15.
- */
 public class HelloPresenterImpl implements HelloPresenter {
 
     private final HelloView view;

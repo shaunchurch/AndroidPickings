@@ -7,4 +7,6 @@
     <string name="title_activity_hello">HelloActivity</string>
     <string name="cache_dir">http</string>
     <string name="title_activity_planets">Planets</string>
+    <string name="text_planets">Planets!</string>
+    <string name="text_hello">Hello</string>
 </resources>

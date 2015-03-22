@@ -1,7 +1,6 @@
 package com.shaunchurch.androidpickings.ui.hello;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.TextView;
 
 import com.shaunchurch.androidpickings.AppComponent;
@@ -13,9 +12,6 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-/**
- * Created by shaun on 22/03/15.
- */
 public class HelloActivity extends BaseActivity
         implements HelloView {
 

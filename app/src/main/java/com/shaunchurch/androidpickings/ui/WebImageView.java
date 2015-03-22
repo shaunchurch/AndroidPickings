@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.shaunchurch.androidpickings.data.entities.Image;
-import com.shaunchurch.androidpickings.ui.base.HasComponent;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;

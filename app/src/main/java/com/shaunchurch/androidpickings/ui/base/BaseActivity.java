@@ -1,20 +1,14 @@
 package com.shaunchurch.androidpickings.ui.base;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
 
 import com.shaunchurch.androidpickings.App;
 import com.shaunchurch.androidpickings.AppComponent;
 import com.shaunchurch.androidpickings.ui.AppContainer;
-import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
 
-/**
- * Created by shaun on 21/03/15.
- */
 public abstract class BaseActivity extends ActionBarActivity {
 
     @Inject

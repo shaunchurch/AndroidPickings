@@ -5,9 +5,6 @@ import java.util.GregorianCalendar;
 
 import javax.inject.Inject;
 
-/**
- * Created by shaun on 22/03/15.
- */
 public class HelloTimeServiceImpl implements HelloTimeService {
 
     @Inject
