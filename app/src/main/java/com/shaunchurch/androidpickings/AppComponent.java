@@ -1,5 +1,7 @@
 package com.shaunchurch.androidpickings;
 
+import android.app.Application;
+
 import com.shaunchurch.androidpickings.data.DataModule;
 import com.shaunchurch.androidpickings.ui.UiModule;
 
@@ -19,4 +21,6 @@ public interface AppComponent extends AppGraph {
         }
         private Initializer() {} // No instances.
     }
+
+    Application provideApplication();
 }

@@ -1,6 +1,7 @@
 package com.shaunchurch.androidpickings.ui.dashboard;
 
 import com.shaunchurch.androidpickings.AppComponent;
+import com.shaunchurch.androidpickings.Vehicle;
 
 import dagger.Component;
 
@@ -10,4 +11,6 @@ import dagger.Component;
         modules = DashboardModule.class
 )
 public interface DashboardComponent {
+        void inject(DashboardActivity activity);
+        Vehicle provideVehicle();
 }

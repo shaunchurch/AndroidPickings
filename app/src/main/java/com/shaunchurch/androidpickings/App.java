@@ -21,6 +21,7 @@ public class App extends Application {
         }
 
         buildComponentAndInject();
+
     }
 
     public void buildComponentAndInject() {

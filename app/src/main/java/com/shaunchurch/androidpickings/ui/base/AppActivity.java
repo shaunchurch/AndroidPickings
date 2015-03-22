@@ -3,6 +3,7 @@ package com.shaunchurch.androidpickings.ui.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.v7.app.ActionBarActivity;
 
 import com.shaunchurch.androidpickings.App;
 import com.shaunchurch.androidpickings.AppComponent;
@@ -14,24 +15,21 @@ import javax.inject.Inject;
 /**
  * Created by shaun on 21/03/15.
  */
-public abstract class AppActivity extends Activity {
+public abstract class AppActivity extends ActionBarActivity {
 
     @Inject
     AppContainer appContainer;
 
-    @Inject
-    Picasso picasso;
-
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         App app = App.get(this);
         onCreateComponent(app.component());
+
         if(appContainer == null ){
             throw new IllegalStateException("No injection happened. Add component.inject(this) in onCreateComponent.");
         }
-
     }
 
     /**

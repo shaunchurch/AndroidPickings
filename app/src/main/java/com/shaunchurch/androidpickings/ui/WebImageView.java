@@ -17,7 +17,9 @@ public class WebImageView extends ImageView {
 
     public WebImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        ((HasComponent<Injector>) context).getComponent().inject(this);
+        this.picasso = picasso;
+//        ((HasComponent<Injector>) context).getComponent().inject(this);
+
     }
 
     public void bindTo(Image image) {
