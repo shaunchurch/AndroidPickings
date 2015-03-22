@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 
 import com.shaunchurch.androidpickings.ApplicationScope;
+import com.shaunchurch.androidpickings.R;
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.picasso.OkHttpDownloader;
@@ -47,7 +48,7 @@ public final class DataModule {
     @Provides
     @ApplicationScope
     SharedPreferences provideSharedPreferences(Application app) {
-        return app.getSharedPreferences("android_pickings", MODE_PRIVATE);
+        return app.getSharedPreferences(app.getString(R.string.app_name), MODE_PRIVATE);
     }
 
     /**
