@@ -5,44 +5,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.shaunchurch.androidpickings.Dagger_VehicleComponent;
+
+import com.shaunchurch.androidpickings.AppComponent;
 import com.shaunchurch.androidpickings.R;
-import com.shaunchurch.androidpickings.Vehicle;
-import com.shaunchurch.androidpickings.VehicleComponent;
-import com.shaunchurch.androidpickings.VehicleModule;
 import com.shaunchurch.androidpickings.ui.base.AppActivity;
+import com.shaunchurch.androidpickings.ui.base.HasComponent;
 
-import javax.inject.Inject;
+public class DashboardActivity extends AppActivity implements HasComponent<DashboardComponent> {
 
-
-public class DashboardActivity extends AppActivity {
-
-    @Inject
-    Vehicle vehicle;
+    private DashboardComponent dashboardComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // use dagger to create our component
-        // modules don't require any arguments, so we could remove the .vehicleModule bit, it will auto-instantiate
-        VehicleComponent component = Dagger_VehicleComponent.builder().vehicleModule(new VehicleModule()).build();
+    }
 
-        // get an instance of a vehicle
-        vehicle = component.provideVehicle();
+    @Override
+    protected void onCreateComponent(AppComponent appComponent) {
+        dashboardComponent = Dagger_DashboardComponent.builder()
+                .appComponent(appComponent)
+                .dashboardModule(new DashboardModule())
+                .build();
+    }
 
-        // see if we can drive
-        Toast.makeText(this, String.valueOf(vehicle.getSpeed()), Toast.LENGTH_SHORT).show();
-        vehicle.increaseSpeed(100);
-        Toast.makeText(this, String.valueOf(vehicle.getSpeed()), Toast.LENGTH_SHORT).show();
-
+    @Override
+    public DashboardComponent getComponent() {
+        return dashboardComponent;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.megnu.menu_main, menu);
         return true;
     }
 
@@ -60,4 +56,6 @@ public class DashboardActivity extends AppActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
