@@ -21,9 +21,11 @@ public class App extends Application {
         }
 
         buildComponentAndInject();
-
     }
 
+    /**
+     * Initialize our root AppComponent, kick off our dependency resolutions
+     */
     public void buildComponentAndInject() {
         component = AppComponent.Initializer.init(this);
         component.inject(this);
