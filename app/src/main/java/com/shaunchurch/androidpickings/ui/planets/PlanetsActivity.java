@@ -1,6 +1,7 @@
 package com.shaunchurch.androidpickings.ui.planets;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.shaunchurch.androidpickings.AppComponent;
@@ -21,8 +22,9 @@ public class PlanetsActivity extends BaseActivity
     private PlanetsComponent planetsComponent;
 
     @Inject PlanetPresenter presenter;
+    @Inject PlanetAdapter planetAdapter;
 
-    @InjectView(R.id.textPlanets) TextView textPlanet;
+    @InjectView(R.id.listPlanets) ListView listPlanets;
 
     @Override
     protected void onCreateComponent(AppComponent appComponent) {
@@ -38,10 +40,13 @@ public class PlanetsActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planets);
         ButterKnife.inject(this);
+
+        listPlanets.setAdapter(planetAdapter);
+        planetAdapter.update();
     }
 
     @Override
     public void onPlanetsReceived(List<Planet> planets) {
-        textPlanet.setText(planets.get(0).getName());
+//        textPlanet.setText(planets.get(0).getName());
     }
 }

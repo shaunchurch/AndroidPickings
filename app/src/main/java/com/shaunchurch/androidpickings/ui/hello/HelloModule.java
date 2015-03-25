@@ -31,5 +31,4 @@ public class HelloModule {
     @Provides
     HelloTimeService helloTimeService(HelloTimeServiceImpl impl) { return impl; }
 
-
 }

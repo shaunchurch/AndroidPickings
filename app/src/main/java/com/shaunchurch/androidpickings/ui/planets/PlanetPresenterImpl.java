@@ -2,7 +2,8 @@ package com.shaunchurch.androidpickings.ui.planets;
 
 import javax.inject.Inject;
 
-public class PlanetPresenterImpl implements PlanetPresenter {
+public class PlanetPresenterImpl
+        implements PlanetPresenter {
 
     private PlanetView view;
     private PlanetSupplier planetSupplier;
