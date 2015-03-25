@@ -28,6 +28,7 @@ public class PlanetAdapter extends BaseAdapter {
     public PlanetAdapter(Application app, PlanetSupplier planetSupplier) {
         this.context = app;
         this.planetSupplier = planetSupplier;
+        update();
     }
 
     public void update() {

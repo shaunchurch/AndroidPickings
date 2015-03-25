@@ -41,8 +41,8 @@ public class PlanetsActivity extends BaseActivity
         setContentView(R.layout.activity_planets);
         ButterKnife.inject(this);
 
+        // set list adapter
         listPlanets.setAdapter(planetAdapter);
-        planetAdapter.update();
     }
 
     @Override

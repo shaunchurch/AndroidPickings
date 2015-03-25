@@ -30,4 +30,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonHello" />
 
+    <Button
+        android:id="@+id/buttonTrees"
+        android:text="@string/text_trees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonPlanets" />
+
 </RelativeLayout>

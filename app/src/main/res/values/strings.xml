@@ -9,4 +9,5 @@
     <string name="title_activity_planets">Planets</string>
     <string name="text_planets">Planets!</string>
     <string name="text_hello">Hello</string>
+    <string name="text_trees">Trees</string>
 </resources>

@@ -16,6 +16,7 @@ import com.shaunchurch.androidpickings.ui.base.BaseActivity;
 import com.shaunchurch.androidpickings.ui.base.HasComponent;
 import com.shaunchurch.androidpickings.ui.hello.HelloActivity;
 import com.shaunchurch.androidpickings.ui.planets.PlanetsActivity;
+import com.shaunchurch.androidpickings.ui.trees.TreesActivity;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
@@ -33,6 +34,7 @@ public class DashboardActivity extends BaseActivity
     @InjectView(R.id.webImageView) WebImageView webImageView;
     @InjectView(R.id.buttonHello) Button buttonHello;
     @InjectView(R.id.buttonPlanets) Button buttonPlanets;
+    @InjectView(R.id.buttonTrees) Button buttonTrees;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class DashboardActivity extends BaseActivity
         // listen for clicks
         buttonHello.setOnClickListener(this);
         buttonPlanets.setOnClickListener(this);
+        buttonTrees.setOnClickListener(this);
 
         picasso.load("http://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg")
                 .into(webImageView);
@@ -80,6 +83,9 @@ public class DashboardActivity extends BaseActivity
                 break;
             case R.id.buttonPlanets:
                 startActivity(new Intent(this, PlanetsActivity.class));
+                break;
+            case R.id.buttonTrees:
+                startActivity(new Intent(this, TreesActivity.class));
                 break;
         }
     }
