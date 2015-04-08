@@ -1,7 +1,6 @@
 package com.shaunchurch.androidpickings.ui.trees;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.widget.ListView;
 
 import com.shaunchurch.androidpickings.AppComponent;
@@ -24,7 +23,7 @@ public class TreesActivity extends BaseActivity {
 
     @Override
     protected void onCreateComponent(AppComponent appComponent) {
-        treesComponent = Dagger_TreesComponent.builder()
+        treesComponent = DaggerTreesComponent.builder()
                 .appComponent(appComponent)
                 .treesModule(new TreesModule())
                 .build();

@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.shaunchurch.androidpickings.data.entities.Tree;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,27 +14,26 @@ import javax.inject.Inject;
 
 public class TreeAdapter extends BaseAdapter {
 
-    private List<TreeItemPresenterImpl> trees;
+    private List<TreeItemPresenter> trees;
     private Context context;
     private TreeSupplier treeSupplier;
+    private TreeItemPresenter treeItemPresenter;
 
     /**
      * @param context
      * @param treeSupplier
      */
     @Inject
-    public TreeAdapter(Application context, TreeSupplier treeSupplier) {
+    public TreeAdapter(Application context, TreeSupplier treeSupplier, TreeItemPresenter treeItemPresenter) {
         this.context = context;
         this.treeSupplier = treeSupplier;
+        this.treeItemPresenter = treeItemPresenter;
         this.trees = new ArrayList<>();
         update();
     }
 
     public void update() {
-        for (int i = 0; i < treeSupplier.getTrees().size(); i++) {
-            // TODO: This calls the implementation directly. Not correct.
-            trees.add(new TreeItemPresenterImpl(treeSupplier.getTree(i)));
-        }
+        trees = treeItemPresenter.generateTreePresenters(treeSupplier.getTrees());
     }
 
     @Override
@@ -45,7 +42,7 @@ public class TreeAdapter extends BaseAdapter {
     }
 
     @Override
-    public TreeItemPresenterImpl getItem(int position) {
+    public TreeItemPresenter getItem(int position) {
         return trees.get(position);
     }
 
@@ -56,7 +53,7 @@ public class TreeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TreeItemPresenterImpl item = trees.get(position);
+        TreeItemPresenter item = trees.get(position);
         convertView = inflateView(item.provideLayoutRes());
         item.display(convertView, position);
         return convertView;

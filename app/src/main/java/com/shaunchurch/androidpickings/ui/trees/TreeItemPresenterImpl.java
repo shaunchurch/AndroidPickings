@@ -10,11 +10,18 @@ import com.shaunchurch.androidpickings.data.entities.Tree;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class TreeItemPresenterImpl implements TreeItemPresenter {
 
     private Tree tree;
 
-    public TreeItemPresenterImpl(Tree tree) {
+    @Inject
+    public TreeItemPresenterImpl() {
+    }
+
+    @Override
+    public void setItem(Tree tree) {
         this.tree = tree;
     }
 
@@ -42,12 +49,15 @@ public class TreeItemPresenterImpl implements TreeItemPresenter {
      * @param trees
      * @return
      */
-    public static List<TreeItemPresenter> generateTreePresenters(List<Tree> trees) {
+    @Override
+    public List<TreeItemPresenter> generateTreePresenters(List<Tree> trees) {
 
         List<TreeItemPresenter> treePresenters = new ArrayList<TreeItemPresenter>();
 
         for (int i = 0; i < trees.size(); i++) {
-            treePresenters.add(new TreeItemPresenterImpl(trees.get(i)));
+            TreeItemPresenterImpl imple = new TreeItemPresenterImpl();
+            imple.setItem(tree);
+            treePresenters.add(imple);
         }
 
         return treePresenters;

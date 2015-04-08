@@ -26,7 +26,7 @@ public class HelloActivity extends BaseActivity
 
     @Override
     protected void onCreateComponent(AppComponent appComponent) {
-        helloComponent = Dagger_HelloComponent.builder()
+        helloComponent = DaggerHelloComponent.builder()
                 .appComponent(appComponent)
                 .helloModule(new HelloModule(this))
                 .build();

@@ -59,7 +59,7 @@ public class DashboardActivity extends BaseActivity
      */
     @Override
     public void onCreateComponent(AppComponent appComponent) {
-        dashboardComponent = Dagger_DashboardComponent.builder()
+        dashboardComponent = DaggerDashboardComponent.builder()
                 .appComponent(appComponent)
                 .dashboardModule(new DashboardModule())
                 .build();

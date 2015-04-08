@@ -14,11 +14,15 @@ public class TreeSupplierImpl implements TreeSupplier {
     @Inject
     public TreeSupplierImpl() {
         mTrees = new ArrayList<>();
-        mTrees.add(new Tree("Spruce"));
-        mTrees.add(new Tree("Oak"));
-        mTrees.add(new Tree("Silver Birch"));
-        mTrees.add(new Tree("Great Redwood"));
-        mTrees.add(new Tree("Willow"));
+
+        Tree tree = new Tree();
+        tree.setName("Trree");
+        mTrees.add(tree);
+
+//        mTrees.add(new Tree().setName("Oak"));
+//        mTrees.add(new Tree("Silver Birch"));
+//        mTrees.add(new Tree("Great Redwood"));
+//        mTrees.add(new Tree("Willow"));
     }
 
     @Override

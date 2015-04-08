@@ -2,7 +2,6 @@ package com.shaunchurch.androidpickings.ui.planets;
 
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.shaunchurch.androidpickings.AppComponent;
 import com.shaunchurch.androidpickings.R;
@@ -28,7 +27,7 @@ public class PlanetsActivity extends BaseActivity
 
     @Override
     protected void onCreateComponent(AppComponent appComponent) {
-        planetsComponent = Dagger_PlanetsComponent.builder()
+        planetsComponent = DaggerPlanetsComponent.builder()
                 .appComponent(appComponent)
                 .planetsModule(new PlanetsModule(this))
                 .build();

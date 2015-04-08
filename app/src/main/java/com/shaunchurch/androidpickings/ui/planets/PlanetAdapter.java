@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.shaunchurch.androidpickings.App;
 import com.shaunchurch.androidpickings.R;
 import com.shaunchurch.androidpickings.data.entities.Planet;
 

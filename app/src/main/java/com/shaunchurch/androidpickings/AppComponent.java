@@ -15,7 +15,7 @@ public interface AppComponent extends AppGraph {
      */
     final static class Initializer {
         static AppComponent init(App app) {
-            return Dagger_AppComponent.builder()
+            return DaggerAppComponent.builder()
                     .appModule(new AppModule(app))
                     .build();
         }

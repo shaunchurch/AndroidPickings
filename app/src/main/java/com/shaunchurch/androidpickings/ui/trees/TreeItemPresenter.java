@@ -2,6 +2,10 @@ package com.shaunchurch.androidpickings.ui.trees;
 
 import android.view.View;
 
+import com.shaunchurch.androidpickings.data.entities.Tree;
+
+import java.util.List;
+
 public interface TreeItemPresenter {
 
     /**
@@ -10,7 +14,7 @@ public interface TreeItemPresenter {
      *
      * @return
      */
-    public int provideLayoutRes();
+    int provideLayoutRes();
 
     /**
      * This method is called after a View has been inflated and is simply used
@@ -21,6 +25,10 @@ public interface TreeItemPresenter {
      * @param position
      *            Position of the element we are displaying
      */
-    public void display(View view, int position);
+    void display(View view, int position);
+
+    void setItem(Tree tree);
+
+    List<TreeItemPresenter> generateTreePresenters(List<Tree> trees);
 
 }
